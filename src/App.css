@@ -1,0 +1,17 @@
+.core
+{ 
+  height:100vh;
+  width: 100vw;
+}
+.core2
+{ 
+  
+  height:100vh;
+  width: 100%;
+  position:absolute;
+}
+.subcore1
+{
+  height: 81px;
+}
+
