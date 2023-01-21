@@ -3,7 +3,7 @@
     --text:black;
     /* #C7D3D4FF */
     --list-hover:rgba(0, 0, 0, 0.253);
-    --list-background:rgba(33, 32, 32, 0.345);
+    --list-background:rgb(255, 255, 255);
 
 }
 .main
@@ -67,6 +67,7 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
+    border: 0.5px solid rgba(128, 128, 128, 0.659);
     
 
     
@@ -124,7 +125,7 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    
+    border: 0.5px solid rgba(128, 128, 128, 0.659);
 
     
 }
@@ -174,6 +175,7 @@
     flex-direction: column;
     box-sizing: border-box;
     overflow-y: scroll;
+    border: 0.5px solid rgba(128, 128, 128, 0.659);
     
 
     

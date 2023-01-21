@@ -1,5 +1,7 @@
-import React from 'react'
+import React  from 'react'
 import css from './airport_page.module.css';
+
+ 
 const Main_airport = () => {
    
 
@@ -7,7 +9,8 @@ const Main_airport = () => {
     <>
     <div className={css.main}>
 
-        Main_airport
+       
+         airport
         
         </div>
     </>

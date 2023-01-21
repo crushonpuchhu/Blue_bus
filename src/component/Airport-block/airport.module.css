@@ -47,6 +47,13 @@
     box-sizing: border-box;
     color: #465986;
     border: 1px solid #465986;
+    transition-duration: 0.2s;
 
 
+}
+.btn:hover
+{
+  background-color: rgba(0, 0, 0, 0.314);
+  color: white;
+  border-color: transparent;
 }

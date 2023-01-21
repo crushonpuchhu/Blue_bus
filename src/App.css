@@ -1,53 +1,52 @@
-.core
-{ 
-  height:100vh;
+.core {
+  height: 100vh;
   width: 100vw;
 }
-.core2
-{ 
+
+.core2 {
   width: 100%;
-  position:absolute;
+  position: absolute;
 }
-.subcore1
-{
+
+.subcore1 {
   height: 81px;
 }
 
-body
-{
+body {
   overflow-y: scroll;
-  overflow-x:hidden;
-}
-body::-webkit-scrollbar
-{
-  width: 12px;
-  
-}
-body::-webkit-scrollbar-track
-{
-
-  background:rgb(210, 207, 207);
-}
-body::-webkit-scrollbar-thumb
-{
-  background:#4169e1e2;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
 
-.move
-{  
-    animation-name: move;
-    animation-duration: 0.3s;
-    animation-timing-function: linear;
-    animation-iteration-count:1;
 }
 
-@keyframes move
-{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(180deg);
-    }
+body::-webkit-scrollbar-track {
+
+  background: rgb(210, 207, 207);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4169e1e2;
+  border-radius: 10px;
+}
+
+
+.move {
+  animation-name: move;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
 }
