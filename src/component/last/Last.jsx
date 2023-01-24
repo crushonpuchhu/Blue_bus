@@ -14,7 +14,7 @@ const Last = () => {
       <p className={css.setr}>2023 Mittalgroup.pvt.ltd All rights reserved</p>
     <div className={css.first}>
         <img src={bus} alt="tag" />
-        <p>BlueBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. redBus offers bus ticket booking through its website,iOS and Android mobile apps for all major routes.</p>
+        <p>BlueBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. BlueBus offers bus ticket booking through its website,iOS and Android mobile apps for all major routes.</p>
         <div className={css.icones}>
           <nav><a href="#"><i className="fa-brands fa-facebook"></i></a></nav>
           <nav><a href="#"><i className="fa-brands fa-instagram"></i></a></nav>
