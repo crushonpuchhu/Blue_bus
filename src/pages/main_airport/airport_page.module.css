@@ -201,6 +201,7 @@
   /* background-color: rgba(0, 255, 255, 0.341); */
   height: 370px;
   width: 300px;
+
 }
 .ar2
 {
@@ -310,4 +311,84 @@
   color: white;
   cursor: pointer;
   z-index: 1;
+}
+.p
+{
+  position:absolute;
+  height:582px;
+  width:367px;
+  border-radius:10px;
+  background-color: white;
+  z-index:1;
+}
+
+.pick_first
+{
+  background-color:var(--ori);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.pick_first p:nth-of-type(1)
+{
+  color: whitesmoke;
+  font-weight: 800;
+  margin-left: 10px;
+  cursor: default;
+}
+.pick_first p:nth-of-type(2)
+{
+  color:white;
+  font-weight: 800;
+  font-size: 18px;
+  margin-right: 20px;
+  cursor: pointer;
+  
+}
+
+.pick_second
+{
+   
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.search1
+{
+  
+  height:45%;
+  width:90%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--ori);
+  display: flex;
+  align-items: center;
+}
+.search1 i
+{
+  
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+.search1 input
+{
+  
+  height: 25px;
+  width: 85%;
+  outline:none;
+  border-color:transparent;
+  box-sizing: border-box;
+  padding:5px;
+  font-weight:700;
+}
+.search1 input::-webkit-input-placeholder
+{
+  color:rgba(134, 131, 131, 0.81);
+  font-size:12px;
+  font-weight:100;
 }

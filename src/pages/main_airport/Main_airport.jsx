@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useEffect, useRef, useState }  from 'react'
 import { useNavigate } from 'react-router-dom';
 import Last from '../../component/last/Last';
 import css from './airport_page.module.css';
@@ -13,6 +13,14 @@ const Main_airport = () => {
     const [show,set_show]=useState(true);
     const [show1,set_show1]=useState(false);
     const [dates,set_dates]=useState({});
+    const pick=useRef();
+    const drop=useRef();
+    const box_pick=useRef();
+    const box_drop=useRef();
+    const [pic,set_pic]=useState(false);
+    const [drp,set_drp]=useState(false);
+
+
     
    
 
@@ -46,6 +54,34 @@ const Main_airport = () => {
      }
 
 
+     function valid()
+     {
+           if(pick.current.innerHTML=="PICK POINT"||drop.current.innerHTML=="DROP POINT") 
+           {
+            if(pick.current.innerHTML=="PICK POINT"&&drop.current.innerHTML=="DROP POINT") 
+            {
+                box_drop.current.style.border ="2px solid red";
+                box_pick.current.style.border ="2px solid red";
+            }
+            else if(pick.current.innerHTML=="PICK POINT")
+            {
+              box_pick.current.style.border ="2px solid red";
+            }
+            else if(drop.current.innerHTML=="DROP POINT")
+            {
+              box_drop.current.style.border="2px solid red";
+            }
+            
+           }
+
+           else
+           {
+
+           }
+          
+     }
+
+
 
 
 
@@ -65,14 +101,17 @@ const Main_airport = () => {
 
               <section className={css.rows2}>
 
-               <div onClick={
+               <div  onClick={
                 ()=>{
+                
                   set_show((p)=>!p)
                   if(show1==true)
                   {
                     set_show1((p)=>!p)
                   }
-                }
+                
+                 }
+              
                 } className={`${css.btn1} ${show?css.sade:null}`}>
                 <section >{show?<nav></nav>:null} </section>
                 <p>From Airport</p>
@@ -103,15 +142,17 @@ const Main_airport = () => {
                 <div>
                   
 
-                <nav>
+                <nav  onClick={()=>set_pic((p)=>!p)} ref={box_pick}>
                 <i className="fa-solid fa-plane-departure"></i>
-                <p>PICK POINT</p>
+                <p ref={pick}>PICK POINT</p>
                 </nav>
-                <nav>
+
+                <nav   onClick={()=>set_drp((p)=>!p)}  ref={box_drop}>
                 <i className="fa-solid fa-bus"></i>
-                <p>DROP POINT</p>
+                <p ref={drop}>{show1?"BOARD POINT":"DROP POINT"}</p>
                 </nav>
                 <nav>
+
                 <i className="fa-solid fa-calendar-days"></i>
                  <p> <b>{dates.d} {dates.m}</b> {dates.y}</p>
                  <p onClick={()=>current_date("t")}>Today</p>
@@ -120,16 +161,64 @@ const Main_airport = () => {
 
                   
                   </div>
-                <div className={css.sub}>
+                <div onClick={valid} className={css.sub}>
                   <p>SHOW BUSES</p>
                 </div>
 
               </section>
 
+               { pic?
+                 <nav className={css.p}>
+                
+                <div className={css.pick_first}>
+                   <p>Select Airport</p>
+                   <p onClick={()=>set_pic((p)=>!p)}>X</p>
+                </div>
+
+                <div className={css.pick_second}>
+
+                  <nav className={css.search1}>
+
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" placeholder="Enter Airport Name"/>
+
+                  </nav>
+
+                </div>
+                  
+                 </nav>:null
+                
+                }
+
+                 { drp?
+                 <nav className={css.p}>
+                
+                <div className={css.pick_first}>
+                   <p>Select Drop point</p>
+                   <p onClick={()=>set_drp((p)=>!p)}>X</p>
+                </div>
+
+                <div className={css.pick_second}>
+
+                  <nav className={css.search1}>
+
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" placeholder="Enter area on City Name"/>
+
+                  </nav>
+
+                </div>
+                  
+                 </nav>:null
+                
+                }
+
              </div>
 
 
            </div>
+
+
            <div className={css.list}>
 
             <div>
@@ -181,3 +270,8 @@ const Main_airport = () => {
 }
 
 export default Main_airport;
+
+
+
+
+
