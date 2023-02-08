@@ -56,6 +56,11 @@
     cursor: pointer;
    
 }
+.flag
+{
+    height:30px;
+    
+}
 .country
 {   position: absolute;
     background-color:var(--list-background);

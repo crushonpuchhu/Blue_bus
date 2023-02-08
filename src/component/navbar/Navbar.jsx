@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import css from './navbar.module.css';
 import bus from './bus2.png';
 import india from './india.png'
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const login_navget=useNavigate();
   const [show, set_show] = useState(false);
   const [show1, set_show1] = useState(false);
   const [show2, set_show2] = useState(false);
@@ -25,7 +27,7 @@ const Navbar = () => {
 
       <div className={css.list}>
         <ul>
-          <li> {lang === "English" ? "Help" : "मदद"}</li>
+          <li> {lang === "English" ? "Help"  : "मदद"  }</li>
           <li onClick={() => {
             set_show((p) => !p)
             if (show1) {
@@ -38,7 +40,7 @@ const Navbar = () => {
             }
           }
           }
-          >  {lang === "English" ? "INDIA" : "भारत"} {!show ? <i className="fa-solid fa-caret-down"></i> : <i className="fa-solid fa-caret-up"></i>}
+          >  {lang === "English" ? "English" : "हिंदी"} {!show ? <i className="fa-solid fa-caret-down"></i> : <i className="fa-solid fa-caret-up"></i>}
             {
               show ? <nav className={css.country}>
 
@@ -115,7 +117,9 @@ const Navbar = () => {
               </nav> : null
             }
           </li>
-          <li>{lang === "English" ? "Login" : "लॉग इन करें"}</li>
+          <li onClick={()=>{
+              login_navget("/login")
+          }} >{lang === "English" ? "Login" : "लॉग इन करें"}</li>
         </ul>
       </div>
 
