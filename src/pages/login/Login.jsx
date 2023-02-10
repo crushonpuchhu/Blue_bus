@@ -32,7 +32,7 @@ const auth = getAuth(app);
 
 
 
-const Login = () => {
+const Login = ({profile1}) => {
 
     const [change, set_change] = useState(true);
     const [ex, set_ex] = useState(true);
@@ -150,7 +150,13 @@ const Login = () => {
            
             if(data)
             {
-                
+                //  console.log(data["_tokenResponse"].email);
+                 const user=data["_tokenResponse"].email;
+            
+                 const rrr=user.split("");
+                 profile1(rrr[0].toUpperCase())
+                 console.log(rrr[0].toUpperCase());
+
                  nav("/");
 
             }

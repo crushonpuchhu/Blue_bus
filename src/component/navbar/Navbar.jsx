@@ -3,7 +3,7 @@ import css from './navbar.module.css';
 import bus from './bus2.png';
 import india from './india.png'
 import { useNavigate } from 'react-router-dom';
-const Navbar = () => {
+const Navbar = ({p,setp}) => {
   const login_navget=useNavigate();
   const [show, set_show] = useState(false);
   const [show1, set_show1] = useState(false);
@@ -117,9 +117,12 @@ const Navbar = () => {
               </nav> : null
             }
           </li>
-          <li onClick={()=>{
+
+         {p==null?<li onClick={()=>{
               login_navget("/login")
-          }} >{lang === "English" ? "Login" : "लॉग इन करें"}</li>
+          }} >{lang === "English" ? "Login" : "लॉग इन करें"}</li>:<li onDoubleClick={()=>{setp(null)}} title='Logout' className={css.profile_user}><p><span>{p}</span></p></li>}
+          
+
         </ul>
       </div>
 
