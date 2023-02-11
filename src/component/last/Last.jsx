@@ -7,9 +7,11 @@ const Last = () => {
 
 
 
-  return (
+return (
   
 <>
+
+
 <div className={css.main}>
       <p className={css.setr}>2023 Mittalgupta.pvt.ltd All rights reserved</p>
     <div className={css.first}>
