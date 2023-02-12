@@ -23,7 +23,7 @@ const Seven=()=>{
              {
                 tieups.map((e,i)=>{
                     return(
-                        <img src={e} alt="" />
+                        <img key={i} src={e} alt="" />
                     )
                 })
              }

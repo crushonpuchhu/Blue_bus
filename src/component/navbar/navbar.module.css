@@ -1,14 +1,15 @@
-:root{
-    --origin:white;
-    --text:black;
+:root {
+    --origin: white;
+    --text: black;
     /* #C7D3D4FF */
-    --list-hover:rgba(0, 0, 0, 0.253);
-    --list-background:rgb(255, 255, 255);
+    --list-hover: rgba(0, 0, 0, 0.253);
+    --list-background: rgb(255, 255, 255);
 
 }
-.main
-{   position: fixed;
-    background-color:var(--origin);
+
+.main {
+    position: fixed;
+    background-color: var(--origin);
     height: 81px;
     width: 100%;
     z-index: 2;
@@ -19,51 +20,52 @@
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
 }
-.icone
-{
- margin-left:200px;
-}
-.icone img
-{
-    height:65px;
-}
-.list
-{
 
-  height: 80%;
-  width: 60%;
-  margin-right: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.icone {
+    margin-left: 200px;
 }
-.list ul
-{ 
-   width: 100%; 
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+
+.icone img {
+    height: 65px;
+}
+
+.list {
+
+    height: 80%;
+    width: 60%;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
 }
-.list ul li
 
-{   position: relative;
-    color:var(--text);
+.list ul li {
+    position: relative;
+    color: var(--text);
     font-size: 14px;
-    font-weight:600;
+    font-weight: 600;
     /* background-color: red; */
     cursor: pointer;
-   
+
 }
-.flag
-{
-    height:30px;
-    
+
+.flag {
+    height: 30px;
+
 }
-.country
-{   position: absolute;
-    background-color:var(--list-background);
+
+.country {
+    position: absolute;
+    background-color: var(--list-background);
     height: 80px;
     width: 240px;
     margin-top: 5px;
@@ -73,55 +75,55 @@
     flex-direction: column;
     box-sizing: border-box;
     border: 0.5px solid rgba(128, 128, 128, 0.659);
-    
 
-    
+
+
 }
-.country div
-{ 
+
+.country div {
     width: 100%;
-    height:40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     transition-duration: 0.2s;
 
 }
-.country div:hover 
-{
-    background-color:var(--list-hover);
+
+.country div:hover {
+    background-color: var(--list-hover);
     color: white;
 }
-.country div p
-{
-  
-    font-size:14px;
+
+.country div p {
+
+    font-size: 14px;
     box-sizing: border-box;
     padding-left: 5px;
 }
-.country div:nth-of-type(1)
-{
-    border-top-left-radius:7px;
-    border-top-right-radius:7px;
+
+.country div:nth-of-type(1) {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
-.country div:nth-of-type(2)
-{
-    border-bottom-left-radius:7px;
-    border-bottom-right-radius:7px;   
+
+.country div:nth-of-type(2) {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
-.country div:nth-of-type(2) img
-{
+
+.country div:nth-of-type(2) img {
     height: 15px;
 }
-.country div:nth-of-type(1) img
-{
+
+.country div:nth-of-type(1) img {
     height: 30px;
 }
 
 /* --------------------------------------------------------------------------------- */
-.country1
-{   position: absolute;
-    background-color:var(--list-background);
+.country1 {
+    position: absolute;
+    background-color: var(--list-background);
     height: 120px;
     width: 250px;
     margin-top: 5px;
@@ -132,45 +134,46 @@
     box-sizing: border-box;
     border: 0.5px solid rgba(128, 128, 128, 0.659);
 
-    
+
 }
-.country1 div
-{ 
+
+.country1 div {
     width: 100%;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     transition-duration: 0.2s;
-    
+
 
 }
-.country1 div:hover 
-{
+
+.country1 div:hover {
     background-color: var(--list-hover);
     color: white;
 }
-.country1 div p
-{
-    font-size:14px;
+
+.country1 div p {
+    font-size: 14px;
     width: 100%;
     box-sizing: border-box;
     padding-left: 15px;
 }
-.country1 div:nth-of-type(1)
-{
-    border-top-left-radius:7px;
-    border-top-right-radius:7px;
+
+.country1 div:nth-of-type(1) {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
-.country1 div:nth-of-type(3)
-{
-    border-bottom-left-radius:7px;
-    border-bottom-right-radius:7px;   
+
+.country1 div:nth-of-type(3) {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
+
 /* =-----------------------------------------------------------------------------------= */
-.country3
-{   position: absolute;
-    background-color:var(--list-background);
+.country3 {
+    position: absolute;
+    background-color: var(--list-background);
     height: 250px;
     width: 150px;
     margin-top: 5px;
@@ -181,28 +184,28 @@
     box-sizing: border-box;
     overflow-y: scroll;
     border: 0.5px solid rgba(128, 128, 128, 0.659);
-    
 
-    
+
+
 }
+
 .country3::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  .country3 ::-webkit-scrollbar-track {
-    background: transparent; 
-  }
-   
-  /* Handle */
-  .country3::-webkit-scrollbar-thumb {
-    background:rgba(0, 0, 0, 0.456); 
+}
+
+/* Track */
+.country3 ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.country3::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.456);
     border-radius: 10px;
-  }
+}
 
 
-.country3 div
-{ 
+.country3 div {
     width: 100%;
     height: 40px;
     min-height: 40px;
@@ -210,35 +213,35 @@
     align-items: center;
     justify-content: space-evenly;
     transition-duration: 0.2s;
-   
-    
+
+
 
 }
-.country3 div:hover 
-{
+
+.country3 div:hover {
     background-color: var(--list-hover);
     color: white;
 }
-.country3 div p
-{
-    font-size:14px;
+
+.country3 div p {
+    font-size: 14px;
     width: 100%;
     box-sizing: border-box;
     padding-left: 15px;
 }
-.country3 div:nth-of-type(1)
-{
-    border-top-left-radius:7px;
-    border-top-right-radius:7px;
+
+.country3 div:nth-of-type(1) {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
-.country3 div:nth-of-type(3)
-{
-    border-bottom-left-radius:7px;
-    border-bottom-right-radius:7px;   
+
+.country3 div:nth-of-type(3) {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
-.profile_user
-{
-    
+
+.profile_user {
+
     height: 40px;
     width: 40px;
     display: flex;
@@ -246,17 +249,17 @@
     justify-content: center;
     box-sizing: border-box;
 }
-.profile_user p
-{
+
+.profile_user p {
     background-color: rgba(255, 0, 0, 0.116);
     height: 30px;
     width: 30px;
-    border-radius:50%;
+    border-radius: 50%;
     border: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    font-weight:700;
+    font-weight: 700;
 
 }

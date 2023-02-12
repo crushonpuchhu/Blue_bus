@@ -83,23 +83,23 @@ const Main_airport = () => {
   // ==================================================//
   // focuse
 
- 
+
   if (pic) {
-    setTimeout(()=>{
-        
-    focuspic.current.focus();
-    // console.log(focuspic.current)
-    },100)
+    setTimeout(() => {
+
+      focuspic.current.focus();
+      // console.log(focuspic.current)
+    }, 100)
 
   }
   if (drp) {
 
-    
-    setTimeout(()=>{
-        
+
+    setTimeout(() => {
+
       focusdrp.current.focus();
       // console.log(focuspic.current)
-      },100)
+    }, 100)
 
   }
 
@@ -201,7 +201,7 @@ const Main_airport = () => {
 
                       <i className="fa-solid fa-magnifying-glass"></i>
 
-                      <input ref={focuspic}  onChange={(e) => {
+                      <input ref={focuspic} onChange={(e) => {
                         set_pic_data(e.target.value)
                       }} onKeyDown={(e) => {
                         if (e.key == "Enter") {
@@ -231,7 +231,7 @@ const Main_airport = () => {
 
                       <i className="fa-solid fa-magnifying-glass"></i>
 
-                      <input ref={focusdrp}  onChange={(e) => {
+                      <input ref={focusdrp} onChange={(e) => {
                         set_drp_data(e.target.value)
                       }} onKeyDown={(e) => {
                         if (e.key == "Enter") {

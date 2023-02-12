@@ -6,11 +6,12 @@ import Main from './pages/main/Main';
 import Know_more from './pages/now_more/Know_more';
 import Login from './pages/login/Login';
 import { useState } from 'react';
+import Find from './pages/find-bus/Find';
 function App() {
 
-   const [profile,set_profile]=useState(null);
-   
-   
+  const [profile, set_profile] = useState(null);
+  const [usee_data, set_user_data] = useState({});
+
 
   return (
     <div className="App">
@@ -20,10 +21,11 @@ function App() {
           <div className='subcore1'></div>
           <Routes>
 
-            <Route path="/" element={<Main />} />
-            <Route path="/Airport_page" element={<Main_airport/>}/>
-            <Route path="/konw_more" element={<Know_more/>}/>
-            <Route path="/login" element={<Login profile1={set_profile} />}/>
+            <Route path="/" element={<Main user={set_user_data} />} />
+            <Route path="/Airport_page" element={<Main_airport />} />
+            <Route path="/konw_more" element={<Know_more />} />
+            <Route path="/login" element={<Login profile1={set_profile} />} />
+            <Route path="/find" element={<Find data={usee_data} />} />
 
           </Routes>
 

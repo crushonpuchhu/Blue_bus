@@ -8,19 +8,19 @@ import Seven from "../../component/seven/Seven";
 import Six from "../../component/six/Six";
 import Third from "../../component/Third_box/Third";
 import css from './main.module.css'
-const Main=()=>{
-    return(
+const Main = ({ user }) => {
+    return (
         <>
-        <div className={css.main}>
-            <Search/>
-            <Airport/>
-            <Third/>
-            <Four_div/>
-            <Five/>
-            <Six/>
-            <Seven/>
-            <Last/>
-        </div>
+            <div className={css.main}>
+                <Search u={user} />
+                <Airport />
+                <Third />
+                <Four_div />
+                <Five />
+                <Six />
+                <Seven />
+                <Last />
+            </div>
         </>
     )
 

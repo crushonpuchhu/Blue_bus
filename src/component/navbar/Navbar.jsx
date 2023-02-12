@@ -3,19 +3,19 @@ import css from './navbar.module.css';
 import bus from './bus2.png';
 import india from './india.png'
 import { useNavigate } from 'react-router-dom';
-const Navbar = ({p,setp}) => {
-  const login_navget=useNavigate();
+const Navbar = ({ p, setp }) => {
+  const login_navget = useNavigate();
   const [show, set_show] = useState(false);
   const [show1, set_show1] = useState(false);
   const [show2, set_show2] = useState(false);
   const [lang, set_lang] = useState("English");
   const curancy = ["USD", "EUR", "VND", "BGN", "MYR", "INR", "PEN", "COP", "GBP", "SGD", "THB", "AUD", "BRL", "IDR", "CLP"]
-  
-  
+
+
 
   function bhasha(e) {
-  set_lang(e.target.innerText)
-    
+    set_lang(e.target.innerText)
+
   }
 
   return (
@@ -27,7 +27,7 @@ const Navbar = ({p,setp}) => {
 
       <div className={css.list}>
         <ul>
-          <li> {lang === "English" ? "Help"  : "मदद"  }</li>
+          <li> {lang === "English" ? "Help" : "मदद"}</li>
           <li onClick={() => {
             set_show((p) => !p)
             if (show1) {
@@ -118,10 +118,10 @@ const Navbar = ({p,setp}) => {
             }
           </li>
 
-         {p==null?<li onClick={()=>{
-              login_navget("/login")
-          }} >{lang === "English" ? "Login" : "लॉग इन करें"}</li>:<li onDoubleClick={()=>{setp(null)}} title='Logout' className={css.profile_user}><p><span>{p}</span></p></li>}
-          
+          {p == null ? <li onClick={() => {
+            login_navget("/login")
+          }} >{lang === "English" ? "Login" : "लॉग इन करें"}</li> : <li onDoubleClick={() => { setp(null) }} title='Logout' className={css.profile_user}><p><span>{p}</span></p></li>}
+
 
         </ul>
       </div>

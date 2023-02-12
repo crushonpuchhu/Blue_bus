@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import css from './Search.module.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // serac---bar
-const Search_bar = () => {
+const Search_bar = ({ uu }) => {
 
+  const find = useNavigate();
   const icone = useRef();
   const to = useRef();
   const from = useRef();
   const [lat_lon, setgeo] = useState({});
-  const current_date=useRef();
+  const current_date = useRef();
+  const rd = useRef();
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((p) => {
@@ -29,24 +32,24 @@ const Search_bar = () => {
 
   async function geo_get() {
 
-   try {
-    const ans = await axios("https://api.openweathermap.org/geo/1.0/reverse?lat=" + lat_lon.lat + "&lon=" + lat_lon.lon + "&appid=f8156af945bf59e720cefff0212c48e6");
-    to.current.value = ans.data[0].name;
-   } catch (error) {
+    try {
+      const ans = await axios("https://api.openweathermap.org/geo/1.0/reverse?lat=" + lat_lon.lat + "&lon=" + lat_lon.lon + "&appid=f8156af945bf59e720cefff0212c48e6");
+      to.current.value = ans.data[0].name;
+    } catch (error) {
       console.log(error);
-   }
+    }
 
   }
 
-    // useEffect(()=>{
-    //   geo_get();
-    // },[])
-  
+  // useEffect(()=>{
+  //   geo_get();
+  // },[])
+
   // -----------------//
 
   const move = () => {
 
-    if (to.current.value != "" && from.current.value != ""&&(!/[^a-zA-Z]/.test(to.current.value))&&!/[^a-zA-Z]/.test(from.current.value)) {
+    if (to.current.value != "" && from.current.value != "" && (!/[^a-zA-Z]/.test(to.current.value)) && !/[^a-zA-Z]/.test(from.current.value)) {
       icone.current.classList.add("move");
       setTimeout(() => {
         icone.current.classList.remove("move");
@@ -61,19 +64,34 @@ const Search_bar = () => {
 
 
 
-  useEffect(()=>{
-        const d=new Date();
-        const year=d.getFullYear();
-        const mounth=d.getMonth()+1;
-        const date=d.getDate();
-        const set_current_date=`${year}-${mounth>9?mounth:("0"+mounth)}-${date}`;
-        current_date.current.value=set_current_date;
-       
-        
+  useEffect(() => {
+    const d = new Date();
+    const year = d.getFullYear();
+    const mounth = d.getMonth() + 1;
+    const date = d.getDate();
+    const set_current_date = `${year}-${mounth > 9 ? mounth : ("0" + mounth)}-${date}`;
+    current_date.current.value = set_current_date;
 
-      
-      
-  },[])
+
+
+
+
+  }, [])
+
+
+  function datacall() {
+    if (to.current.value != "" & from.current.value != "" & current_date.current.value != "" & rd.current.value != "") {
+
+      find("/find")
+      uu({
+        from: to.current.value,
+        to: from.current.value,
+        cdd: current_date.current.value,
+        rdd: rd.current.value
+      })
+    }
+  }
+
 
   return (
     <>
@@ -105,7 +123,7 @@ const Search_bar = () => {
             <nav style={{ width: "90%" }} className={css.first_box} >
               <p>DATE</p>
               <div className={css.input}>
-                <input ref={current_date}  type="date" />
+                <input ref={current_date} type="date" />
               </div>
             </nav>
           </section>
@@ -114,11 +132,11 @@ const Search_bar = () => {
             <nav style={{ width: "90%" }} className={css.first_box} >
               <p>RETURN DATE</p>
               <div className={css.input}>
-                <input type="date" />
+                <input ref={rd} type="date" />
               </div>
             </nav>
           </section>
-          <section>
+          <section onClick={() => { datacall() }}>
             <h1>SEARCH</h1>
           </section>
 
@@ -129,7 +147,7 @@ const Search_bar = () => {
   )
 }
 // first block
-const Search = () => {
+const Search = ({ u }) => {
 
 
 
@@ -173,7 +191,7 @@ const Search = () => {
 
         </div>
 
-        <Search_bar />
+        <Search_bar uu={u} />
 
       </div>
     </>
