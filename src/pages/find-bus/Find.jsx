@@ -3,6 +3,7 @@ import css from './find.module.css';
 
 
 const Find = ({ data }) => {
+    
 
 
     return (
